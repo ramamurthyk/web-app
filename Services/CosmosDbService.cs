@@ -1,33 +1,38 @@
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using app.Models;
 using Microsoft.Azure.Cosmos;
-using Microsoft.Azure.Cosmos.Fluent;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
+
+using app.Models;
 
 namespace app.Services
 {
+    /// <summary>
+    /// An implementation of Cosmos DB service.
+    /// </summary>
     public class CosmosDbService : IDbService
     {
-        private readonly ILogger<CosmosDbService> _logger;
         private Container _container;
 
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="dbClient">Cosmos DB client</param>
+        /// <param name="databaseName">Database name from the app settings.</param>
+        /// <param name="containerName">Container name from the app settings.</param>
         public CosmosDbService(
             CosmosClient dbClient,
             string databaseName,
             string containerName)
         {
-            //ILogger<CosmosDbService> logger,
-            //sthis._logger = logger;
             this._container = dbClient.GetContainer(databaseName, containerName);
         }
 
+        /// <summary>
+        /// Add an item to the Cosmos DB.
+        /// </summary>
+        /// <param name="item">Item to add.</param>
+        /// <returns></returns>
         public async Task AddItemAsync(Item item)
         {
-            //_logger.LogInformation("Adding Item - Id:{0}", item.Id);
-            //, new PartitionKey(item.Id)
             await this._container.CreateItemAsync<Item>(item);
         }
     }
