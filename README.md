@@ -3,7 +3,7 @@
 Contains a simple REST API to insert the date time stamp to an Azure Cosmos DB.
 
 ## Deploy this application - preferred way
-The easiest way to deploy and run this application is via the Deploy To Azure option present in the [app-deploy](https://github.com/ramamurthyk/app-deploy) GitHub repository.
+The easiest way to deploy and run this application is via the deployment options documented in the [app-deploy](https://github.com/ramamurthyk/app-deploy) GitHub repository.
 Follow the instructions in the Readme.md file.
 
 For local development/debugging, follow the option mentioned below:
