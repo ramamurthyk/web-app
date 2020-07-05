@@ -2,13 +2,13 @@
 
 Contains a simple REST API to insert the date time stamp to an Azure Cosmos DB.
 
-## Deploy this application
+## Deploy this application - preferred way
 The easiest way to deploy and run this application is via the Deploy To Azure option present in the [app-deploy](https://github.com/ramamurthyk/app-deploy) GitHub repository.
 Follow the instructions in the Readme.md file.
 
 For local development/debugging, follow the option mentioned below:
 
-## Running this application from the .NET Core command line
+## Running this application locally from the .NET Core command line
 
 1. Before you can run this application, you must have the following prerequisites:
     - [.NET Core SDK 3.1 or higher](https://dotnet.microsoft.com/download)
